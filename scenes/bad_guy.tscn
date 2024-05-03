@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=3 uid="uid://bpe4qh66yoork"]
+
+[ext_resource type="Texture2D" uid="uid://btd1afks7gn14" path="res://assets/sprites/slime_purple.png" id="1_chylb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5kxl3"]
+atlas = ExtResource("1_chylb")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8urwn"]
+atlas = ExtResource("1_chylb")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hcfgp"]
+atlas = ExtResource("1_chylb")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7dag1"]
+atlas = ExtResource("1_chylb")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lb6q0"]
+atlas = ExtResource("1_chylb")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wllhp"]
+atlas = ExtResource("1_chylb")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h3vwd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5kxl3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8urwn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hcfgp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7dag1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lb6q0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wllhp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="BadGuy" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_h3vwd")
+autoplay = "default"
+frame = 5
+frame_progress = 0.917894
+flip_h = true

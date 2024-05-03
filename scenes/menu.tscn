@@ -1,0 +1,69 @@
+[gd_scene load_steps=6 format=3 uid="uid://pqu8khkkwbgk"]
+
+[ext_resource type="Script" path="res://scripts/Menu.gd" id="1_qeme1"]
+[ext_resource type="Shader" path="res://menu.gdshader" id="2_3bee2"]
+[ext_resource type="PackedScene" uid="uid://cdmy7k64qren6" path="res://scenes/h_slider.tscn" id="3_fq4lf"]
+[ext_resource type="FontFile" uid="uid://def43cxa1hluu" path="res://assets/fonts/PixelOperator8.ttf" id="3_howhv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7w88n"]
+shader = ExtResource("2_3bee2")
+shader_parameter/amount = 2.0
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qeme1")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_7w88n")
+layout_mode = 0
+offset_left = -213.0
+offset_top = -156.0
+offset_right = -173.0
+offset_bottom = -116.0
+scale = Vector2(12.76, 9.72)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Return" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 0.772549, 0, 1)
+theme_override_fonts/font = ExtResource("3_howhv")
+theme_override_font_sizes/font_size = 16
+text = "Return"
+
+[node name="HSlider" parent="MarginContainer/VBoxContainer" instance=ExtResource("3_fq4lf")]
+layout_mode = 2
+bus_name = "Music"
+
+[node name="HSlider2" parent="MarginContainer/VBoxContainer" instance=ExtResource("3_fq4lf")]
+layout_mode = 2
+bus_name = "SFX"
+
+[node name="Options" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 0.772549, 0, 1)
+theme_override_fonts/font = ExtResource("3_howhv")
+theme_override_font_sizes/font_size = 16
+text = "Options"
+
+[node name="Exit" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_howhv")
+theme_override_font_sizes/font_size = 16
+text = "Exit"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Return" to="." method="_on_return_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
