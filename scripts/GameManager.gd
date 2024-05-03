@@ -11,3 +11,4 @@ func add_point():
 	coinsleft.text = "Also, you've missed " + str(coinsOnMap - score) + " Coins"
 	if score == coinsOnMap:
 		coinsleft.text = "You have all coins."
+# comment

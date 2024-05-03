@@ -417,6 +417,21 @@ sources/0 = SubResource("TileSetAtlasSource_qbtod")
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7y7hh"]
 distance = -1.0
 
+[sub_resource type="Animation" id="Animation_5ckro"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(860, -213)]
+}
+
 [sub_resource type="Animation" id="Animation_3j8c6"]
 resource_name = "new_animation"
 loop_mode = 2
@@ -433,7 +448,13 @@ tracks/0/keys = {
 "values": [Vector2(860, -213), Vector2(733, -238)]
 }
 
-[sub_resource type="Animation" id="Animation_5ckro"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o8ltr"]
+_data = {
+"RESET": SubResource("Animation_5ckro"),
+"new_animation": SubResource("Animation_3j8c6")
+}
+
+[sub_resource type="Animation" id="Animation_0ijaq"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -445,13 +466,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(860, -213)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_o8ltr"]
-_data = {
-"RESET": SubResource("Animation_5ckro"),
-"new_animation": SubResource("Animation_3j8c6")
+"values": [Vector2(382, -21)]
 }
 
 [sub_resource type="Animation" id="Animation_wcu5b"]
@@ -471,7 +486,13 @@ tracks/0/keys = {
 "values": [Vector2(382, -21), Vector2(502, -22)]
 }
 
-[sub_resource type="Animation" id="Animation_0ijaq"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1lssd"]
+_data = {
+"RESET": SubResource("Animation_0ijaq"),
+"new_animation": SubResource("Animation_wcu5b")
+}
+
+[sub_resource type="Animation" id="Animation_37iia"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -483,13 +504,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(382, -21)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_1lssd"]
-_data = {
-"RESET": SubResource("Animation_0ijaq"),
-"new_animation": SubResource("Animation_wcu5b")
+"values": [Vector2(535, -22)]
 }
 
 [sub_resource type="Animation" id="Animation_ol73c"]
@@ -507,21 +522,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(653, -23), Vector2(535, -22)]
-}
-
-[sub_resource type="Animation" id="Animation_37iia"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(535, -22)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_88mlc"]
